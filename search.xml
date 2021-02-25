@@ -1,61 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2021/02/22/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>Hexo安装过程和常用命令 Next主题安装</title>
     <url>/2021/02/23/hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<p>经过一天的奋战，现在搭建的博客终于有点样子了，本文整合一下这一天博客的搭建过程，顺便整理一下 hexo 官网和 next 官网上的常用命令.</p>
   <span id="more"></span>
 
 <h1 id="1-Hexo简介"><a href="#1-Hexo简介" class="headerlink" title="1 Hexo简介"></a>1 Hexo简介</h1><p>  Hexo是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。即把用户的markdown文件，按照指定的主题解析成静态网页.</p>
-<h1 id="2-安装-Hexo"><a href="#2-安装-Hexo" class="headerlink" title="2 安装 Hexo"></a>2 安装 Hexo</h1><h2 id="1-软件准备"><a href="#1-软件准备" class="headerlink" title="(1) 软件准备"></a>(1) 软件准备</h2><p>  安装 Hexo 前需要先安装两个软件分别是Git和Node.js.<br>  <a href="https://git-scm.com/">Git官网</a>       <a href="https://nodejs.org/en/">Node.js官网</a><br>  ———————————————————————————————————————<br>  <a href="https://www.jianshu.com/p/414ccd423efc">Git安装教程</a>        <a href="https://www.liaoxuefeng.com/wiki/1022910821149312/1023025597810528">Node.js安装教程</a></p>
+<h1 id="2-安装-Hexo"><a href="#2-安装-Hexo" class="headerlink" title="2 安装 Hexo"></a>2 安装 Hexo</h1><h2 id="1-软件准备"><a href="#1-软件准备" class="headerlink" title="(1) 软件准备"></a>(1) 软件准备</h2><p>  安装 Hexo 前需要先安装两个软件分别是Git和Node.js.<br>  <a href="https://git-scm.com/">Git官网</a>       <a href="https://nodejs.org/en/">Node.js官网</a><br>  <a href="https://www.jianshu.com/p/414ccd423efc">Git安装教程</a>        <a href="https://www.liaoxuefeng.com/wiki/1022910821149312/1023025597810528">Node.js安装教程</a></p>
 <h2 id="2-安装-Hexo-（下面出现的检测全部是在-git-中进行的，鼠标右击点击-Git-Bash-Here）"><a href="#2-安装-Hexo-（下面出现的检测全部是在-git-中进行的，鼠标右击点击-Git-Bash-Here）" class="headerlink" title="(2) 安装 Hexo （下面出现的检测全部是在 git 中进行的，鼠标右击点击 Git Bash Here）"></a>(2) 安装 Hexo （下面出现的检测全部是在 git 中进行的，鼠标右击点击 Git Bash Here）</h2><p>  检测 node 安装是否成功：</p>
-<p>  node -v   #返回版本号</p>
-<p>  npm -v    #返回版本号</p>
-<p>  ———————————————————————————————————————<br>  安装淘宝的镜像源（如果错误就重来，因为连接可能不稳定，失败了多试几次就可以了）</p>
-<p>  npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org/">https://registry.npm.taobao.org</a></p>
-<p>  cnpm -v   #返回 cnpm 的版本信息<br>  ———————————————————————————————————————<br>  cnpm install -g hexo-cli   #安装 hexo（如果失败重新来过）</p>
-<p>  hexo -v   #返回 hexo 的版本信息</p>
+<pre><code>  node -v   #返回版本号
+
+  npm -v    #返回版本号
+</code></pre>
+<p>  安装淘宝的镜像源（如果错误就重来，因为连接可能不稳定，失败了多试几次就可以了）</p>
+<pre><code>  npm install -g cnpm --registry=https://registry.npm.taobao.org
+
+  cnpm -v   #返回 cnpm 的版本信息
+
+  cnpm install -g hexo-cli   #安装 hexo（如果失败重新来过）
+
+  hexo -v   #返回 hexo 的版本信息
+</code></pre>
 <h2 id="3-初始化博客"><a href="#3-初始化博客" class="headerlink" title="(3) 初始化博客"></a>(3) 初始化博客</h2><p>  在本地（可以在任何位置）建立 Blog 文件夹</p>
 <p>  进入 Blog 文件夹内的 Git 页面（在新建的Blog文件夹里面鼠标右击点击 Git Bash Here）</p>
-<p>  hexo init     #初始化 hexo</p>
-<p>  ls -l     #查看初始化获得的文件</p>
-<p>  hexo s    #启动 hexo</p>
+<pre><code>  hexo init     #初始化 hexo
+
+  ls -l     #查看初始化获得的文件
+
+  hexo s    #启动 hexo
+</code></pre>
 <p>  打开<a href="http://localhost:4000/">http://localhost:4000</a> 这样就可以在本地 4000 端口查看自己的网站了</p>
 <h2 id="4-将博客远程部署到-Github-上"><a href="#4-将博客远程部署到-Github-上" class="headerlink" title="(4) 将博客远程部署到 Github 上"></a>(4) 将博客远程部署到 Github 上</h2><p>  首先申请一个 Github 账号，然后再 Github 中按照 自己的昵称+.github.io 建立一个<br>  仓库（repository）（例：chancheren.github.io）<br>  然后在 Blog 目录下安装一个 hexo 部署插件</p>
-<p>  cnpm install –save hexo-deployer-git<br>  ———————————————————————————————————————<br>  找到 Blog 文件中的 _config.yml 文件，使用编译器打开，滑到底部找到deploy，修改为下面样式</p>
-<pre><code>    deploy:  
+<pre><code>  cnpm install --save hexo-deployer-git
+
+  找到 Blog 文件中的 _config.yml 文件，使用编译器打开，滑到底部找到deploy，修改为下面样式
+
+    deploy:  
         type: git
         repo: 填写你的仓库ssh地址
         branch: master
 </code></pre>
-<p>  ———————————————————————————————————————<br>  然后在 Git 里面输入 hexo d 将本地文件部署到 github 新建的仓库中<br>  然后通过访问 https://+自己的仓库名 就可以访问部署到 github 上的 blog 了<br>  ———————————————————————————————————————</p>
+<p>  然后在 Git 里面输入 hexo d 将本地文件部署到 github 新建的仓库中<br>  然后通过访问 https://+自己的仓库名 就可以访问部署到 github 上的 blog 了</p>
 <h1 id="3-安装-Next-主题和-Next-主题美化"><a href="#3-安装-Next-主题和-Next-主题美化" class="headerlink" title="3 安装 Next 主题和 Next 主题美化"></a>3 安装 Next 主题和 Next 主题美化</h1><p>  安装Next主题网上有很多教程在这我推荐B站UP主 Mackxin 的教程<br>  <a href="https://www.bilibili.com/video/BV16W411t7mq">教程在这点我</a> </p>
 <h1 id="4-Hexo常用命令"><a href="#4-Hexo常用命令" class="headerlink" title="4 Hexo常用命令"></a>4 Hexo常用命令</h1><pre><code>&lt;!-- more --&gt;  #文章摘要
+
+hexo n &quot;文章标题&quot; == hexo new &quot;new_post&quot; #直接创建文章
+
+hexo n page 标签页  #创建子页面
+
+hexo p == hexo publish #发布文章，将草稿升级为文章
+
+hexo s == hexo server #在本地服务器预览，可修改localhost端口
+
+hexo clean #清除本地文件
+
+hexo g == hexo generate #生成静态网页
+
+hexo d == hexo deploy #部署到远端服务器
 </code></pre>
-<p>  hexo n “文章标题” == hexo new “new_post” #直接创建文章</p>
-<p>  hexo p == hexo publish #发布文章，将草稿升级为文章</p>
-<p>  hexo s == hexo server #在本地服务器预览，可修改localhost端口</p>
-<p>  hexo clean #清除本地文件</p>
-<p>  hexo g == hexo generate #生成静态网页</p>
-<p>  hexo d == hexo deploy #部署到远端服务器</p>
 ]]></content>
       <categories>
         <category>教程</category>
@@ -66,15 +69,21 @@
       </tags>
   </entry>
   <entry>
-    <title>资源</title>
-    <url>/2021/02/22/%E8%B5%84%E6%BA%90/</url>
-    <content><![CDATA[<h1 id="Go-是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。"><a href="#Go-是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。" class="headerlink" title="Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。"></a>Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。</h1><h1 id="Go是从2007年末由Robert-Griesemer-Rob-Pike-Ken-Thompson主持开发，后来还加入了Ian-Lance-Taylor-Russ-Cox等人，并最终于2009年11月开源，在2012年早些时候发布了Go-1稳定版本。现在Go的开发已经是完全开放的，并且拥有一个活跃的社区。"><a href="#Go是从2007年末由Robert-Griesemer-Rob-Pike-Ken-Thompson主持开发，后来还加入了Ian-Lance-Taylor-Russ-Cox等人，并最终于2009年11月开源，在2012年早些时候发布了Go-1稳定版本。现在Go的开发已经是完全开放的，并且拥有一个活跃的社区。" class="headerlink" title="Go是从2007年末由Robert Griesemer, Rob Pike, Ken Thompson主持开发，后来还加入了Ian Lance Taylor, Russ Cox等人，并最终于2009年11月开源，在2012年早些时候发布了Go 1稳定版本。现在Go的开发已经是完全开放的，并且拥有一个活跃的社区。"></a>Go是从2007年末由Robert Griesemer, Rob Pike, Ken Thompson主持开发，后来还加入了Ian Lance Taylor, Russ Cox等人，并最终于2009年11月开源，在2012年早些时候发布了Go 1稳定版本。现在Go的开发已经是完全开放的，并且拥有一个活跃的社区。</h1><span id="more"></span>
-<h1 id="Go-语言特色"><a href="#Go-语言特色" class="headerlink" title="Go 语言特色"></a>Go 语言特色</h1><h1 id="简洁、快速、安全"><a href="#简洁、快速、安全" class="headerlink" title="简洁、快速、安全"></a>简洁、快速、安全</h1><h1 id="并行、有趣、开源"><a href="#并行、有趣、开源" class="headerlink" title="并行、有趣、开源"></a>并行、有趣、开源</h1><h1 id="内存管理、数组安全、编译迅速"><a href="#内存管理、数组安全、编译迅速" class="headerlink" title="内存管理、数组安全、编译迅速"></a>内存管理、数组安全、编译迅速</h1><h1 id="Go-语言用途"><a href="#Go-语言用途" class="headerlink" title="Go 语言用途"></a>Go 语言用途</h1><h1 id="Go-语言被设计成一门应用于搭载-Web-服务器，存储集群或类似用途的巨型中央服务器的系统编程语言。"><a href="#Go-语言被设计成一门应用于搭载-Web-服务器，存储集群或类似用途的巨型中央服务器的系统编程语言。" class="headerlink" title="Go 语言被设计成一门应用于搭载 Web 服务器，存储集群或类似用途的巨型中央服务器的系统编程语言。"></a>Go 语言被设计成一门应用于搭载 Web 服务器，存储集群或类似用途的巨型中央服务器的系统编程语言。</h1><h1 id="对于高性能分布式系统领域而言，Go-语言无疑比大多数其它语言有着更高的开发效率。它提供了海量并行的支持，这对于游戏服务端的开发而言是再好不过了。"><a href="#对于高性能分布式系统领域而言，Go-语言无疑比大多数其它语言有着更高的开发效率。它提供了海量并行的支持，这对于游戏服务端的开发而言是再好不过了。" class="headerlink" title="对于高性能分布式系统领域而言，Go 语言无疑比大多数其它语言有着更高的开发效率。它提供了海量并行的支持，这对于游戏服务端的开发而言是再好不过了。"></a>对于高性能分布式系统领域而言，Go 语言无疑比大多数其它语言有着更高的开发效率。它提供了海量并行的支持，这对于游戏服务端的开发而言是再好不过了。</h1>]]></content>
+    <title>Darkmode.js 为 Next 添加黑暗模式</title>
+    <url>/2021/02/23/%E9%BB%91%E6%9A%97%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>博客基本东西配置好了，但总觉的少点什么，看到网上大神的博客都很漂亮，今天决定加一个黑夜主题，弄了几十分钟弄好了，前端的东西没怎么学，以后多学习。</p>
+<span id="more"></span>
+<h1 id="Next引入-Darkmode-js-快速支持黑暗模式"><a href="#Next引入-Darkmode-js-快速支持黑暗模式" class="headerlink" title="Next引入 Darkmode.js 快速支持黑暗模式"></a>Next引入 Darkmode.js 快速支持黑暗模式</h1><p>打开Blog\themes\next\layout_scripts文件夹内的vendors.njk文件，在末尾添加以下代码</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">addDarkmodeWidget</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> options = &#123;</span><br><span class="line">      bottom: <span class="string">&#x27;64px&#x27;</span>, <span class="comment">// default: &#x27;32px&#x27;</span></span><br><span class="line">      right: <span class="string">&#x27;32px&#x27;</span>, <span class="comment">// default: &#x27;32px&#x27;</span></span><br><span class="line">      left: <span class="string">&#x27;unset&#x27;</span>, <span class="comment">// default: &#x27;unset&#x27;</span></span><br><span class="line">      time: <span class="string">&#x27;0.5s&#x27;</span>, <span class="comment">// default: &#x27;0.3s&#x27;</span></span><br><span class="line">      mixColor: <span class="string">&#x27;#fff&#x27;</span>, <span class="comment">// default: &#x27;#fff&#x27;</span></span><br><span class="line">      backgroundColor: <span class="string">&#x27;#fff&#x27;</span>,  <span class="comment">// default: &#x27;#fff&#x27;</span></span><br><span class="line">      buttonColorDark: <span class="string">&#x27;#100f2c&#x27;</span>,  <span class="comment">// default: &#x27;#100f2c&#x27;</span></span><br><span class="line">      buttonColorLight: <span class="string">&#x27;#fff&#x27;</span>, <span class="comment">// default: &#x27;#fff&#x27;</span></span><br><span class="line">      saveInCookies: <span class="literal">false</span>, <span class="comment">// default: true,</span></span><br><span class="line">      label: <span class="string">&#x27;🌓&#x27;</span>, <span class="comment">// default: &#x27;&#x27;</span></span><br><span class="line">      autoMatchOsTheme: <span class="literal">true</span> <span class="comment">// default: true</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> darkmode = <span class="keyword">new</span> Darkmode(options);</span><br><span class="line">    darkmode.showWidget();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">window</span>.addEventListener(<span class="string">&#x27;load&#x27;</span>, addDarkmodeWidget);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="还有很多其他方式添加黑夜模式，官网都有详细的说明"><a href="#还有很多其他方式添加黑夜模式，官网都有详细的说明" class="headerlink" title="还有很多其他方式添加黑夜模式，官网都有详细的说明"></a>还有很多其他方式添加黑夜模式，官网都有详细的说明</h1><p>官方网址 <a href="https://darkmodejs.learn.uno/">https://darkmodejs.learn.uno/</a></p>
+]]></content>
       <categories>
-        <category>前端</category>
+        <category>教程</category>
       </categories>
       <tags>
-        <tag>资源分享</tag>
+        <tag>Next</tag>
+        <tag>美化</tag>
       </tags>
   </entry>
 </search>
