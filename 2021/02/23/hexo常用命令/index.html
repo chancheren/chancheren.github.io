@@ -689,6 +689,16 @@ hexo d == hexo deploy #部署到远端服务器
 </script>
 
 
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.0.0/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink.listen({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'http://littlecamel.cn/2021/02/23/hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/',]
+      });
+      });
+  </script>
 
 </body>
 </html>
